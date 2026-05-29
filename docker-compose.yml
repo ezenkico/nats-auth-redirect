@@ -1,0 +1,17 @@
+services:
+  nats:
+    image: nats:latest
+    ports:
+      - "4222:4222"
+      - "8080:8080" # Monitoring port
+    env_file:
+      - .env
+    volumes:
+      - ./nats.conf:/etc/nats/nats.conf:ro
+    networks:
+      - os-msa-poc-network
+    command: -config /etc/nats/nats.conf
+
+networks:
+  os-msa-poc-network:
+    name: os-msa-poc-network
