@@ -31,4 +31,6 @@ go.work.sum
 # .idea/
 # .vscode/
 
-./nats-keys
+nats-keys/
+nsc
+account-issuer.txt
